@@ -100,16 +100,16 @@ namespace AutoBuddy.MainLogics
 
             if (ObjectManager.Get<Obj_AI_Turret>().Count() == 24)
             {
-                if (AutoWalker.myHero.Gold < 550 && MainMenu.GetMenu("AB").Get<CheckBox>("mid").CurrentValue)
+                if (AutoWalker.myHero.Gold < 550 && MainMenu.GetMenu("AB").Get<CheckBox>("bot").CurrentValue)
                 {
                     Vector3 p =
                         ObjectManager.Get<Obj_AI_Turret>()
-                            .First(tur => tur.IsAlly && tur.Name.EndsWith("C_05_A"))
+                            .First(tur => tur.IsAlly && tur.Name.EndsWith("R_03_A"))
                             .Position;
 
-                    Core.DelayAction(() => SafeFunctions.Ping(PingCategory.OnMyWay, p.Randomized()),
-                        RandGen.r.Next(1500, 3000));
-                    Core.DelayAction(() => SafeFunctions.SayChat("eu na falo portuges bom"), RandGen.r.Next(200, 1000));
+                    "Core.DelayAction(() => SafeFunctions.Ping(PingCategory.OnMyWay, p.Randomized()),
+                        RandGen.r.Next(1500, 3000));""
+                    Core.DelayAction(() => SafeFunctions.SayChat("boa noite, bom jogo e sem rage por favor..."), RandGen.r.Next(200, 1000));
                     AutoWalker.SetMode(Orbwalker.ActiveModes.Combo);
                     AutoWalker.WalkTo(p.Extend(AutoWalker.MyNexus, 200 + RandGen.r.NextFloat(0, 100)).To3DWorld().Randomized());
                 }
@@ -142,35 +142,35 @@ namespace AutoBuddy.MainLogics
         {
 
             if (!args.Message.StartsWith("<font color=\"#40c1ff\">Challenjour Ryze")) return;
-            if (args.Message.Contains("have fun"))
-                Core.DelayAction(() => Chat.Say("gl hf"), RandGen.r.Next(2000, 4000));
-            if (args.Message.Contains("hello"))
-                Core.DelayAction(() => Chat.Say("hi Christian"), RandGen.r.Next(2000, 4000));
+            if (args.Message.Contains("bom jogo"))
+                Core.DelayAction(() => Chat.Say("fala"), RandGen.r.Next(2000, 4000));
+            if (args.Message.Contains("ola"))
+                Core.DelayAction(() => Chat.Say("oi"), RandGen.r.Next(2000, 4000));
             if (args.Message.Contains("Which")||args.Message.Contains("Whats"))
                 Core.DelayAction(() => Chat.Say(Assembly.GetExecutingAssembly().GetName().Version.Revision.ToString()), RandGen.r.Next(2000, 4000));
-            if (args.Message.Contains("go top please."))
+            if (args.Message.Contains("vai top"))
             {
-                Core.DelayAction(() => Chat.Say("kk"), RandGen.r.Next(1000, 2000));
+                Core.DelayAction(() => Chat.Say("sei la"), RandGen.r.Next(1000, 2000));
                 Core.DelayAction(() => SelectLane2(Lane.Top), RandGen.r.Next(2500, 4000));
             }
-            if (args.Message.Contains("go mid please."))
+            if (args.Message.Contains("vai mid"))
             {
-                Core.DelayAction(() => Chat.Say("ok"), RandGen.r.Next(1000, 2000));
+                Core.DelayAction(() => Chat.Say("acho que nao"), RandGen.r.Next(1000, 2000));
                 Core.DelayAction(() => SelectLane2(Lane.Mid), RandGen.r.Next(2500, 4000));
             }
-            if (args.Message.Contains("go bot please."))
+            if (args.Message.Contains("vai bot"))
             {
-                Core.DelayAction(() => Chat.Say("k"), RandGen.r.Next(1000, 2000));
+                Core.DelayAction(() => Chat.Say("vou pensar"), RandGen.r.Next(1000, 2000));
                 Core.DelayAction(() => SelectLane2(Lane.Bot), RandGen.r.Next(2500, 4000));
             }
-            if (args.Message.Contains("go where you want."))
+            if (args.Message.Contains("sai porra"))
             {
-                Core.DelayAction(() => Chat.Say("yes sir"), RandGen.r.Next(1000, 2000));
+                Core.DelayAction(() => Chat.Say("sim"), RandGen.r.Next(1000, 2000));
                 Core.DelayAction(SelectLane, RandGen.r.Next(2500, 4000));
             }
-            if (args.Message.Contains("Thank you"))
+            if (args.Message.Contains("vlw"))
             {
-                Core.DelayAction(() => Chat.Say("np"), RandGen.r.Next(1000, 2000));
+                Core.DelayAction(() => Chat.Say("normal"), RandGen.r.Next(1000, 2000));
                 Core.DelayAction(SelectLane, RandGen.r.Next(2500, 4000));
             }
 
