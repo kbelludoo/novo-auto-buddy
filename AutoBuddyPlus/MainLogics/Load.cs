@@ -109,7 +109,7 @@ namespace AutoBuddy.MainLogics
 
                     Core.DelayAction(() => SafeFunctions.Ping(PingCategory.OnMyWay, p.Randomized()),
                         RandGen.r.Next(1500, 3000));
-                    Core.DelayAction(() => SafeFunctions.SayChat("mid"), RandGen.r.Next(200, 1000));
+                    Core.DelayAction(() => SafeFunctions.SayChat("eu na falo portuges bom"), RandGen.r.Next(200, 1000));
                     AutoWalker.SetMode(Orbwalker.ActiveModes.Combo);
                     AutoWalker.WalkTo(p.Extend(AutoWalker.MyNexus, 200 + RandGen.r.NextFloat(0, 100)).To3DWorld().Randomized());
                 }
